@@ -1,0 +1,93 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <main>
+    <h1 class="text-center text-lg text-green-400">Hello World !</h1>
+
+    <div class="h-1o my-4 w-full rounded-md border-2 border-violet-700 bg-violet-500 py-2">
+      <p class="text-center font-mono text-xl">A Div</p>
+    </div>
+
+    <!-- LAYOUT -->
+
+    <div class="absolute mx-3 my-3 h-28 w-28 border-2 border-blue-400 bg-blue-200 shadow-xl hover:shadow-2xl"></div>
+    <div class="relative h-28 w-28 bg-blue-700 hover:mx-5 hover:my-5"></div>
+
+    <div class="flex justify-around border-2 border-red-100">
+      <div class="h-10 w-10 rounded-full bg-red-400"></div>
+      <div class="h-10 w-10 rounded-full bg-red-400"></div>
+      <div class="h-10 w-10 rounded-full bg-red-400"></div>
+    </div>
+
+    <div class="mt-3 grid grid-cols-3 gap-3">
+      <div class="h-12 bg-violet-500"></div>
+      <div class="h-12 bg-violet-500"></div>
+      <div class="h-12 bg-violet-500"></div>
+      <div class="h-12 bg-violet-500"></div>
+      <div class="h-12 bg-violet-500"></div>
+    </div>
+
+    <div class="hidden md:block">
+      <p>I will appaear for device resolution Greater than >768px</p>
+    </div>
+    <div class="hidden max-md:block">
+      <p>I will appaear for device resolution Less then < 768px</p>
+    </div>
+
+    <ul class="my-2 space-y-2">
+      <li class="p-2 first:bg-yellow-200">Item-1</li>
+      <li class="p-2 odd:bg-green-200 even:bg-blue-200">Item-1</li>
+      <li class="p-2 odd:bg-green-200 even:bg-blue-200">Item-1</li>
+      <li class="p-2 odd:bg-green-200 even:bg-blue-200">Item-1</li>
+      <li class="p-2 odd:bg-green-200 even:bg-blue-200">Item-1</li>
+      <li class="p-2 odd:bg-green-200 even:bg-blue-200">Item-1</li>
+    </ul>
+  </main>
+
+  <!-- DARK MODE -->
+
+  <!-- in config file add this config at top  "darkMode:'class',"  -->
+
+  <!-- use of custom component class "card" add @layers:component & then add class name and @apply method for more info see css file-->
+
+  <div class="card">
+    <h3 class="text-base font-medium tracking-tight dark:text-white">Dark Mode Demo Setup.</h3>
+    <p class="mt-2 text-sm text-slate-500 dark:text-blue-50">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      Quas, nihil.</p>
+
+    <button id="toggleDark" class="mt-8 rounded-md bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900"
+      onclick="document.body.classList.toggle('dark')">Toggle Dark Mode</button>
+  </div>
+
+
+  <!-- Custom Color -->
+  <button class="mt-8 rounded-md bg-chestnut px-4 py-2 text-sm font-medium text-white">Custom Color Button</button>
+  </div>
+
+  <!-- TOGGLE SCRIPT FOR DARK KODE -->
+
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleDark = document.getElementById('toggleDark')
+      toggleDark.addEventListener('click', function () {
+        if (document.documentElement.classList.includes('dark')) {
+          document.documentElement.classList.remove('dark')
+        }
+        else {
+          document.documentElement.classList.add('dark')
+        }
+        alert("click!")
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>
